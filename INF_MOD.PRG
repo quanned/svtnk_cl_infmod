@@ -30,7 +30,7 @@ set century ON
 clea
 store 0 to nn,mn
 select 1
-use C:\NADO\infzap EXCLUSIVE
+use D:\iz EXCLUSIVE
 prz1=rek1
 use
 pp=0
@@ -194,17 +194,17 @@ DO OKNO
 @0,5 say ' ”®à¬¨à®¢ ­¨¥ ¯¥ç â¨  '
 DO SOOB
 select 0
-IF .not. net_use('j:\nsig\infmod','infmod',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\infmod','infmod',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\nsig\infmod
-COPY TO c:\infmod FOR dat>=n_dat .and. dat<=k_dat
+set index to D:\work\svtnk_cl_infmod\dbf\infmod
+COPY TO D:\work\svtnk_cl_infmod\dbf\infmod FOR dat>=n_dat .and. dat<=k_dat
 use
-use c:\infmod alias infgns exclusive
-index on dtos(datg)+mod to c:\infmod
-set index to c:\infmod
+use D:\work\svtnk_cl_infmod\dbf\infmod alias infgns exclusive
+index on dtos(datg)+mod to D:\work\svtnk_cl_infmod\dbf\infmod
+set index to D:\work\svtnk_cl_infmod\dbf\infmod
 
 lst=1
 ks=68
@@ -212,7 +212,7 @@ pc=2
 pcd=15
 set console off
 set device to print
-set printer to c:\f_imodd
+set printer to D:\work\svtnk_cl_infmod\dbf\f_imodd
 @prow(),pcol() say chr(27)+chr(33)+chr(1)    && à áè¨à¥­­ë© èà¨äâ
 DO SH_MODD
 DO WHILE .not. EOF()
@@ -245,10 +245,10 @@ DO WHILE .not. EOF()
 ENDDO
 inkey(0)
 clear
-DO PEC with 'c:\f_imodd.prn'
+DO PEC with 'D:\work\svtnk_cl_infmod\dbf\f_imodd.prn'
 release all
 close all
-erase c:\f_imodd.txt
+erase D:\work\svtnk_cl_infmod\dbf\f_imodd.txt
 RETURN
 *************** ¯à®æ. £®«®¢­ ï è ¯ª  (íªà ­)*****************************
 PROC SH_MODD1
@@ -287,76 +287,76 @@ RETURN
 PROC KOR_INF1           &&-ª®àà¥ªâ¨à®¢ª 
 set exclusive OFF
 select 0
-IF .not. net_use('j:\texno\sprtx','fio',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\sprtx','fio',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\texno\sprtx
+set index to D:\work\svtnk_cl_infmod\dbf\texno\sprtx
 
 select 0
-IF .not. net_use('j:\nsig\cenmod','cenmod',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\cenmod','cenmod',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\nsig\cenmod,j:\nsig\cenmod1
+set index to D:\work\svtnk_cl_infmod\dbf\cenmod, D:\work\svtnk_cl_infmod\dbf\cenmod1
 
 select 0
-IF .not. net_use('j:\nsig\infmod','infmod',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\infmod','infmod',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\nsig\infmod
+set index to D:\work\svtnk_cl_infmod\dbf\infmod
 
 select 0
-if .not. NET_USE('j:\texno\m101001','m101001',.f.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\m101001','m101001',.f.)
   release all
   close all
   return
 endif
-set index to j:\texno\m101001
+set index to D:\work\svtnk_cl_infmod\dbf\m101001
 
 select 0
-if .not. NET_USE('j:\nsi_nov\sprrvm','sprrvm',.f.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\sprrvm','sprrvm',.f.)
   release all
   close all
   return
 endif
-set index to j:\nsi_nov\sprrvm4,j:\nsi_nov\sprrvm,j:\nsi_nov\sprrvm1,j:\nsi_nov\sprrvm2,j:\nsi_nov\sprrvm3
+set index to D:\work\svtnk_cl_infmod\dbf\sprrvm4,D:\work\svtnk_cl_infmod\dbf\sprrvm,D:\work\svtnk_cl_infmod\dbf\sprrvm1,D:\work\svtnk_cl_infmod\dbf\sprrvm2,D:\work\svtnk_cl_infmod\dbf\sprrvm3
 
 select 0
-if .not. NET_USE('j:\nsi_nov\nesvm','nesvm',.f.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\nesvm','nesvm',.f.)
   release all
   close all
   return
 endif
-set index to j:\nsi_nov\nesvm,j:\nsi_nov\nesvm1
+set index to D:\work\svtnk_cl_infmod\dbf\nesvm,D:\work\svtnk_cl_infmod\dbf\nesvm1
 
 select 0
-IF .not. net_use('j:\nsi_nov\sprnop','polotno',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\sprnop','polotno',.f.)
    close all
    release all
    return
 endif
-set index to j:\nsi_nov\sprnop,j:\nsi_nov\sprnop1,j:\nsi_nov\sprnop2
+set index to D:\work\svtnk_cl_infmod\dbf\sprnop,D:\work\svtnk_cl_infmod\dbf\sprnop1,D:\work\svtnk_cl_infmod\dbf\sprnop2
 
 select 0
-if .not. NET_USE('j:\nsi_nov\sprvc','sprvc',.f.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\sprvc','sprvc',.f.)
   release all
   close all
   return
 endif
-set index to j:\nsi_nov\sprvc
+set index to D:\work\svtnk_cl_infmod\dbf\sprvc
 
 select 0
-IF .not. net_use('j:\nsig\infgns','infgns',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\infgns','infgns',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\nsig\infgns,j:\nsig\infgns1
+set index to D:\work\svtnk_cl_infmod\dbf\infgns,D:\work\svtnk_cl_infmod\dbf\infgns1
 
 select infmod
 
@@ -657,12 +657,12 @@ ENDCASE
 ***********  à®¢¥àª  § ¯®«­¥­¨ï á¯à ¢®ç­¨ª®¢ ƒ‘  ******************
 PROCEDURE ERROR
 select 0
-IF .not. net_use('j:\nsig\infmod','infmod',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\infmod','infmod',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\nsig\infmod
+set index to D:\work\svtnk_cl_infmod\dbf\infmod
 
 COPY to rab_inf fields mod,prz
 
@@ -739,47 +739,47 @@ ENDCASE
 *********************************************************************
 PROC PEC_ERR
 select 0
-if .not. NET_USE('j:\texno\m101001','m101001',.f.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\m101001','m101001',.f.)
   release all
   close all
   return
 endif
-set index to j:\texno\m101001
+set index to D:\work\svtnk_cl_infmod\dbf\m101001
 
 select 0
-if .not. NET_USE('j:\nsi_nov\sprnop','sprnop',.f.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\sprnop','sprnop',.f.)
   release all
   close all
   return
 endif
-set index to j:\nsi_nov\sprnop
+set index to D:\work\svtnk_cl_infmod\dbf\sprnop
 
 select 0
-if .not. NET_USE('j:\nsig\nsikis','nsikis',.f.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\nsikis','nsikis',.f.)
   release all
   close all
   return
 endif
-set index to j:\nsig\nsikis
+set index to D:\work\svtnk_cl_infmod\dbf\nsikis
 
 select 0
-if .not. NET_USE('j:\nsi_nov\sprrvm','sprrvm',.f.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\sprrvm','sprrvm',.f.)
   release all
   close all
   return
 endif
-set index to j:\nsi_nov\sprrvm4,j:\nsi_nov\sprrvm,j:\nsi_nov\sprrvm1,j:\nsi_nov\sprrvm2,j:\nsi_nov\sprrvm3
+set index to D:\work\svtnk_cl_infmod\dbf\sprrvm4,D:\work\svtnk_cl_infmod\dbf\sprrvm,D:\work\svtnk_cl_infmod\dbf\sprrvm1,D:\work\svtnk_cl_infmod\dbf\sprrvm2,D:\work\svtnk_cl_infmod\dbf\sprrvm3
 
 select 0
-if .not. NET_USE('j:\nsi_nov\nsiskl','nsiskl',.f.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\nsiskl','nsiskl',.f.)
   release all
   close all
   return
 endif
-set index to j:\nsi_nov\nsiskl1
+set index to D:\work\svtnk_cl_infmod\dbf\nsiskl1
 
 select 0
-create j:\nsi_nov\nsip\rab_gns
+create D:\work\svtnk_cl_infmod\dbf\rab_gns
 append blank
 replace FIELD_NAME WITH 'ARTP1',field_type with 'C',field_len with 7
 append blank
@@ -788,18 +788,18 @@ append blank
 replace FIELD_NAME WITH 'NOR',field_type with 'N',field_len with 9,field_dec with 4
 append blank
 replace FIELD_NAME WITH 'OOB',field_type with 'N',field_len with 5,field_dec with 2
-create j:\nsi_nov\nsip\rab_gns1 from j:\nsi_nov\nsip\rab_gns
+create D:\work\svtnk_cl_infmod\dbf\rab_gns1 from D:\work\svtnk_cl_infmod\dbf\rab_gns
 
-if .not. NET_USE('j:\nsi_nov\nsip\rab_gns1','gns1',.t.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\rab_gns1','gns1',.t.)
   release all
   close all
   return
 endif
-index on artp1 to j:\nsi_nov\nsip\rab_gns1
-set index to j:\nsi_nov\nsip\rab_gns1
+index on artp1 to D:\work\svtnk_cl_infmod\dbf\rab_gns1
+set index to D:\work\svtnk_cl_infmod\dbf\rab_gns1
 
 select 0
-create j:\nsi_nov\nsip\rab_gns2
+create D:\work\svtnk_cl_infmod\dbf\rab_gns2
 append blank
 replace FIELD_NAME WITH 'VM1',field_type with 'N',field_len with 4
 append blank
@@ -810,23 +810,23 @@ append blank
 replace FIELD_NAME WITH 'VD2',field_type with 'N',field_len with 2
 append blank
 replace FIELD_NAME WITH 'NOR',field_type with 'N',field_len with 7,field_dec with 3
-create j:\nsi_nov\nsip\rab_gns3 from j:\nsi_nov\nsip\rab_gns2
+create D:\work\svtnk_cl_infmod\dbf\rab_gns3 from D:\work\svtnk_cl_infmod\dbf\rab_gns2
 
-if .not. NET_USE('j:\nsi_nov\nsip\rab_gns3','gns3',.t.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\rab_gns3','gns3',.t.)
   release all
   close all
   return
 endif
-index on str(vm1,4)+str(vd1,2) to j:\nsi_nov\nsip\rab_gns3
-set index to j:\nsi_nov\nsip\rab_gns3
+index on str(vm1,4)+str(vd1,2) to D:\work\svtnk_cl_infmod\dbf\nsip\rab_gns3
+set index to D:\work\svtnk_cl_infmod\dbf\rab_gns3
 
 select 0
-if .not. NET_USE('j:\nsi_nov\sprpot','po',.f.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\sprpot','po',.f.)
   release all
   close all
   return
 endif
-set index to j:\nsi_nov\sprpot
+set index to D:\work\svtnk_cl_infmod\dbf\sprpot
 
 select 0
 USE rab_inf alias rabinf EXCLUSIVE
@@ -1131,24 +1131,24 @@ close all
 release all
 *erase rab_inf.dbf
 *erase rab_inf.ntx
-*erase j:\nsi_nov\nsip\rab_gns.dbf
-*erase j:\nsi_nov\nsip\rab_gns.ntx
-*erase j:\nsi_nov\nsip\rab_gns1.dbf
-*erase j:\nsi_nov\nsip\rab_gns1.ntx
-*erase j:\nsi_nov\nsip\rab_gns2.dbf
-*erase j:\nsi_nov\nsip\rab_gns2.ntx
-*erase j:\nsi_nov\nsip\rab_gns3.dbf
-*erase j:\nsi_nov\nsip\rab_gns3.ntx
+*erase D:\work\svtnk_cl_infmod\dbf\nsip\rab_gns.dbf
+*erase D:\work\svtnk_cl_infmod\dbf\nsip\rab_gns.ntx
+*erase D:\work\svtnk_cl_infmod\dbf\nsip\rab_gns1.dbf
+*erase D:\work\svtnk_cl_infmod\dbf\nsip\rab_gns1.ntx
+*erase D:\work\svtnk_cl_infmod\dbf\nsip\rab_gns2.dbf
+*erase D:\work\svtnk_cl_infmod\dbf\nsip\rab_gns2.ntx
+*erase D:\work\svtnk_cl_infmod\dbf\nsip\rab_gns3.dbf
+*erase D:\work\svtnk_cl_infmod\dbf\nsip\rab_gns3.ntx
 RETURN
 **************  à®¢¥àª  ®¡áç¨â ­­ëå ¬®¤¥«¥©  ************************
 PROCEDURE ERROR2
 select 0
-IF .not. net_use('j:\nsig\cenmod','cenmod',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\cenmod','cenmod',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\nsig\cenmod,j:\nsig\cenmod1
+set index to D:\work\svtnk_cl_infmod\dbf\cenmod,D:\work\svtnk_cl_infmod\dbf\cenmod1
 
 COPY to rab_inf fields mod,prz
 
@@ -1270,20 +1270,20 @@ ENDCASE
 *********************************************************************
 PROC PEC_INF1        &&¯¥ç âì á¯à ¢®ç­¨ª 
 select 0
-IF .not. net_use('j:\nsig\cenmod','cenmod',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\cenmod','cenmod',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\nsig\cenmod,j:\nsig\cenmod1
+set index to D:\work\svtnk_cl_infmod\dbf\cenmod,D:\work\svtnk_cl_infmod\dbf\cenmod1
 
 select 0
-IF .not. net_use('j:\nsig\infmod','infmod',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\','infmod',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\nsig\infmod
+set index to D:\work\svtnk_cl_infmod\dbf\infmod
 
 if pp=0
    set filter to tex=1 .and. tex_p=1 .and. otiz=1 .and. otiz_r=1 .and. gns=1 .and. stan=1
@@ -1381,12 +1381,12 @@ if lastkey()=27
 endif
 
 select 0
-IF .not. net_use('j:\nsig\cenmod','infmod',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\cenmod','infmod',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\nsig\cenmod1
+set index to D:\work\svtnk_cl_infmod\dbf\cenmod1
 set filter to dat>=n_dat .and. dat<=k_dat
 go top
 
@@ -1441,21 +1441,21 @@ DO OKNO
 DO SOOB
 close all
 select 0
-IF .not. net_use('j:\nsig\infmod','infmod',.t.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\nfmod','infmod',.t.)
     close all
     release all
     RETURN
 ENDIF
-set index to j:\nsig\infmod
+set index to D:\work\svtnk_cl_infmod\dbf\infmod
 PACK
 
 select 0
-if .not. NET_USE('j:\nsi_nov\nesvm','nesvm',.t.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\nesvm','nesvm',.t.)
   release all
   close all
   return
 endif
-set index to j:\nsi_nov\nesvm,j:\nsi_nov\nesvm1
+set index to D:\work\svtnk_cl_infmod\dbf\nesvm,D:\work\svtnk_cl_infmod\dbf\nesvm1
 PACK
 close all
 RETURN
@@ -1466,42 +1466,42 @@ DO OKNO
 DO SOOB
 close all
 select 0
-IF .not. net_use('j:\nsig\infmod','infmod',.t.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\infmod','infmod',.t.)
     close all
     release all
     RETURN
 ENDIF
-index on mod to j:\nsig\infmod
+index on mod to D:\work\svtnk_cl_infmod\dbf\infmod
 
 select 0
-IF .not. net_use('j:\nsig\cenmod','cenmod',.t.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\cenmod','cenmod',.t.)
     close all
     release all
     RETURN
 ENDIF
-index on mod to j:\nsig\cenmod
-index on dtos(dat)+mod to j:\nsig\cenmod1
+index on mod to D:\work\svtnk_cl_infmod\dbf\cenmod
+index on dtos(dat)+mod to D:\work\svtnk_cl_infmod\dbf\cenmod1
 
 select 0
-if .not. NET_USE('j:\nsi_nov\nesvm','nesvm',.t.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\nesvm','nesvm',.t.)
   release all
   close all
   return
 endif
-index on prz+mod+str(vmt,4)+str(vdt,2) to j:\nsi_nov\nesvm
-index on prz+mod+str(vmg,4)+str(vdg,2) to j:\nsi_nov\nesvm1
+index on prz+mod+str(vmt,4)+str(vdt,2) to D:\work\svtnk_cl_infmod\dbf\nesvm
+index on prz+mod+str(vmg,4)+str(vdg,2) to D:\work\svtnk_cl_infmod\dbf\nesvm1
 close all
 RETURN
 **********************************************************************
 PROC PRS_INF2           &&-¯à®á¬®âà ¯à®áç¨â ­­ëå ¬®¤¥«¥©
 set exclusive OFF
 select 0
-IF .not. net_use('j:\nsig\cenmod','infmod',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\cenmod','infmod',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\nsig\cenmod,j:\nsig\cenmod1
+set index to D:\work\svtnk_cl_infmod\dbf\cenmod,D:\work\svtnk_cl_infmod\dbf\cenmod1
 
 DECLARE pole[11]
 pole[1]='prz'
@@ -1805,28 +1805,28 @@ return
 *********************************************************************
 PROC PNESVM
 select 0
-IF .not. net_use('j:\nsi_nov\sprvc','sprvc',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\sprvc','sprvc',.f.)
    close all
    release all
    RETURN
 ENDIF
-set index to j:\nsi_nov\sprvc
+set index to D:\work\svtnk_cl_infmod\dbf\sprvc
 
 select 0
-IF .not. net_use('j:\nsig\spropis','spropis',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\spropis','spropis',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\nsig\spropis
+set index to D:\work\svtnk_cl_infmod\dbf\spropis
 
 select 0
-if .not. NET_USE('j:\nsi_nov\nesvm','nesvm',.f.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\nesvm','nesvm',.f.)
   release all
   close all
   return
 endif
-set index to j:\nsi_nov\nesvm1,j:\nsi_nov\nesvm
+set index to D:\work\svtnk_cl_infmod\dbf\nesvm1,D:\work\svtnk_cl_infmod\dbf\nesvm
 
 @ 1,1 clear to 23,78
 @ 1,1 say '            ¥áâëª®¢ª  á¯à ¢®ç­¨ª  SPRRVM c â¥å­®«®£ ¬¨        '
@@ -1970,20 +1970,20 @@ else
 endif
 
 select 0
-IF .not. net_use('j:\nsig\cenmod','cenmod',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\cenmod','cenmod',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\nsig\cenmod,j:\nsig\cenmod1
+set index to D:\work\svtnk_cl_infmod\dbf\cenmod,D:\work\svtnk_cl_infmod\dbf\cenmod1
 
 select 0
-IF .not. net_use('j:\nsig\infmod','infmod',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\infmod','infmod',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\nsig\infmod
+set index to D:\work\svtnk_cl_infmod\dbf\infmod
 set filter to .not.(tex=1 .and. tex_p=1 .and. otiz=1 .and. otiz_r=1 .and. gns=1 .and. stan=1)
 go top
 
@@ -2079,12 +2079,12 @@ endif
 set index to j:\texno\sprtx
 
 select 0
-IF .not. net_use('j:\nsig\cenmod','cenmod',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\cenmod','cenmod',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\nsig\cenmod,j:\nsig\cenmod1
+set index to D:\work\svtnk_cl_infmod\dbf\cenmod,D:\work\svtnk_cl_infmod\dbf\cenmod1
 
 select 0
 if .not. NET_USE('j:\texno\m101001','m101001',.f.)
@@ -2095,44 +2095,44 @@ endif
 set index to j:\texno\m101001
 
 select 0
-if .not. NET_USE('j:\nsi_nov\sprrvm','sprrvm',.f.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\sprrvm','sprrvm',.f.)
   release all
   close all
   return
 endif
-set index to j:\nsi_nov\sprrvm4,j:\nsi_nov\sprrvm,j:\nsi_nov\sprrvm1,j:\nsi_nov\sprrvm2,j:\nsi_nov\sprrvm3
+set index to D:\work\svtnk_cl_infmod\dbf\sprrvm4,D:\work\svtnk_cl_infmod\dbf\sprrvm,D:\work\svtnk_cl_infmod\dbf\sprrvm1,D:\work\svtnk_cl_infmod\dbf\sprrvm2,D:\work\svtnk_cl_infmod\dbf\sprrvm3
 
 select 0
-if .not. NET_USE('j:\nsi_nov\nesvm','nesvm',.f.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\nesvm','nesvm',.f.)
   release all
   close all
   return
 endif
-set index to j:\nsi_nov\nesvm,j:\nsi_nov\nesvm1
+set index to D:\work\svtnk_cl_infmod\dbf\nesvm,D:\work\svtnk_cl_infmod\dbf\nesvm1
 
 select 0
-IF .not. net_use('j:\nsi_nov\sprnop','polotno',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\sprnop','polotno',.f.)
    close all
    release all
    return
 endif
-set index to j:\nsi_nov\sprnop,j:\nsi_nov\sprnop1,j:\nsi_nov\sprnop2
+set index to D:\work\svtnk_cl_infmod\dbf\sprnop,D:\work\svtnk_cl_infmod\dbf\sprnop1,D:\work\svtnk_cl_infmod\dbf\sprnop2
 
 select 0
-if .not. NET_USE('j:\nsi_nov\sprvc','sprvc',.f.)
+if .not. NET_USE('D:\work\svtnk_cl_infmod\dbf\sprvc','sprvc',.f.)
   release all
   close all
   return
 endif
-set index to j:\nsi_nov\sprvc
+set index to D:\work\svtnk_cl_infmod\dbf\sprvc
 
 select 0
-IF .not. net_use('j:\nsig\infmod','infmod',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\infmod','infmod',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\nsig\infmod
+set index to D:\work\svtnk_cl_infmod\dbf\infmod
 set filter to (tex=1 .and. tex_p=1 .and. otiz_r=1 .and. gns=1)
 go top
 
@@ -2336,12 +2336,12 @@ if lastkey()=27
 endif
 
 select 0
-IF .not. net_use('j:\nsig\infmod','infmod',.f.)
+IF .not. net_use('D:\work\svtnk_cl_infmod\dbf\infmod','infmod',.f.)
    close all
    release all
    RETURN
 endif
-set index to j:\nsig\infmod
+set index to D:\work\svtnk_cl_infmod\dbf\infmod
 set filter to dat>=n_dat .and. dat<=k_dat
 go top
 
